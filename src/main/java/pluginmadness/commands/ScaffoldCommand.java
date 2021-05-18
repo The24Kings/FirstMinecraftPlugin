@@ -17,7 +17,9 @@ public class ScaffoldCommand implements CommandExecutor {
         Location playerLocation = new Location(player.getWorld(), player.getLocation().getBlockX(), player.getLocation().getBlockY(), player.getLocation().getBlockZ());
 
         if(label.equalsIgnoreCase("scaffold")) {
-            Scaffold.start();
+            if(Scaffold.isRunning()) {
+                Scaffold.stop();
+            } else Scaffold.start();
         }
         if (label.equalsIgnoreCase("scaffold") && args[0] != null) {
             if(args[0].equalsIgnoreCase("ice")) {
