@@ -4,7 +4,7 @@ import org.bukkit.Material;
 
 public class Scaffold {
     public static boolean running;
-    public static Material mainMaterial = Material.AIR;
+    public static Material mainMaterial = Material.ICE;
 
     public static void start() {
         running = true;
