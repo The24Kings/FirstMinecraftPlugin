@@ -5,7 +5,6 @@
 *.ipr
 *.iws
 *.xml
-*.yml
 
 # IntelliJ
 out/
