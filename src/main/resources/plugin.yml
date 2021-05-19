@@ -1,0 +1,4 @@
+name: FirstPlugin
+version: ${project.version}
+main: com.person.firstplugin.Main
+api-version: 1.16
