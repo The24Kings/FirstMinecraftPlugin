@@ -1,8 +1,0 @@
-main: pluginmadness.Main
-name: KingsPlugin
-version: 1.0
-author: 24Kings
-api-version: 1.16
-
-commands:
-  scaffold:

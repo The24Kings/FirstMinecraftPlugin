@@ -38,7 +38,7 @@ public class ScaffoldCommand implements CommandExecutor {
             } else if (args[0].equalsIgnoreCase("blue_ice")) {
                 Scaffold.setMaterial(Material.BLUE_ICE);
                 player.sendMessage(ChatColor.AQUA + "Set Scaffold to 'minecraft:blue_ice'");
-            }
+            } else player.sendMessage(ChatColor.DARK_RED + "Cannot set scaffold block to '" + args[0].toString() + "'");
         }
         return true;
     }
