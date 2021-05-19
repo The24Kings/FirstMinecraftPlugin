@@ -18,6 +18,12 @@ import org.bukkit.util.Vector;
 
 public class PlayerEventHandler implements Listener {
 
+     /* TODO
+     *
+     * add in a toggle for "Thor" and "Deficating" events
+     *
+     */
+
     @EventHandler
     public void onSneak (PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
