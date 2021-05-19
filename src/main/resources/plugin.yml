@@ -6,3 +6,7 @@ api-version: 1.16
 
 commands:
   scaffold:
+    description: Enables ice boat scaffolding
+
+  thor:
+    description: You are the god of thuder!

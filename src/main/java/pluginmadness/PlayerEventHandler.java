@@ -20,7 +20,7 @@ public class PlayerEventHandler implements Listener {
 
      /* TODO
      *
-     * add in a toggle for "Thor" and "Deficating" events
+     * add in "Deficating" command system
      *
      */
 
@@ -46,11 +46,13 @@ public class PlayerEventHandler implements Listener {
 
     @EventHandler
     public void onClick(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
-        Location location = player.getLocation();
+        if(Thor.isRunning()) {
+            Player player = event.getPlayer();
+            Location location = player.getLocation();
 
-        if(event.getAction() == Action.LEFT_CLICK_AIR) {
-            player.getWorld().strikeLightning(player.getTargetBlock(null, 64).getLocation());
+            if (Thor.targetHand() == player.getInventory().getItemInMainHand().getType() && event.getAction() == Action.LEFT_CLICK_AIR) {
+                player.getWorld().strikeLightning(player.getTargetBlock(null, 64).getLocation());
+            }
         }
     }
 

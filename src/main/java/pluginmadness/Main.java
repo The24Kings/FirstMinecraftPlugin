@@ -4,6 +4,8 @@ import pluginmadness.commands.ScaffoldCommand;
 import pluginmadness.commands.ScaffoldTabCompleter;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import pluginmadness.commands.ThorCommand;
+import pluginmadness.commands.ThorTabCompleter;
 
 
 public final class Main extends JavaPlugin {
@@ -24,6 +26,9 @@ public final class Main extends JavaPlugin {
 
         getCommand("scaffold").setExecutor(new ScaffoldCommand());
         getCommand("scaffold").setTabCompleter(new ScaffoldTabCompleter());
+
+        getCommand("thor").setExecutor(new ThorCommand());
+        getCommand("thor").setTabCompleter(new ThorTabCompleter());
     }
 
 }
