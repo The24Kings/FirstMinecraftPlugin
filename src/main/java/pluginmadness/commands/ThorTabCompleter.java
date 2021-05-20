@@ -12,12 +12,7 @@ public class ThorTabCompleter  implements TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
 
         ArrayList<String> parameters = new ArrayList<>();
-        parameters.add("netherite_axe");
-        parameters.add("diamond_axe");
-        parameters.add("golden_axe");
-        parameters.add("iron_axe");
-        parameters.add("stone_axe");
-        parameters.add("wooden_axe");
+        parameters.add("set");
 
         return parameters;
     }
