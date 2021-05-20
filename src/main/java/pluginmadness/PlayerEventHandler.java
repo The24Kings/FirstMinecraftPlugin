@@ -10,7 +10,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -49,7 +48,6 @@ public class PlayerEventHandler implements Listener {
     public void onClick(PlayerInteractEvent event) {
         if(Thor.isRunning()) {
             Player player = event.getPlayer();
-            Location location = player.getLocation();
             ItemStack inHand = player.getInventory().getItemInMainHand();
 
             if (Thor.targetHand().equals(inHand) && event.getAction() == Action.LEFT_CLICK_AIR) {
