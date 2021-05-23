@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PluginMadness extends JavaPlugin {
 
-    private static PluginMadness plugin;
+    public static PluginMadness plugin;
 
     public static PluginMadness getPlugin() {
         return plugin;

@@ -89,7 +89,7 @@ public class PlayerEventHandler implements Listener {
     public void onBlockBreak(BlockDamageEvent event) {
         if (BigFunni.isRunning()) {
 
-            int delay = 10; //# of ticks
+            int delay = 1; //# of ticks
             Location blockLocal = event.getBlock().getLocation();
             World world = blockLocal.getWorld();
 
