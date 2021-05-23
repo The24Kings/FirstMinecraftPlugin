@@ -64,11 +64,13 @@ public class PlayerEventHandler implements Listener {
     public void onMove(PlayerMoveEvent event) {
         if(Scaffold.isRunning()) {
             Player player = event.getPlayer();
-            Location location = player.getLocation();
-            World world = player.getWorld();
+            if(Scaffold.getPlayers().contains(player)) {
+                Location location = player.getLocation();
+                World world = player.getWorld();
 
-            if (event.getTo() != event.getFrom()) {
-                world.getBlockAt(location.subtract(0, 1, 0)).setType(Scaffold.curMaterial());
+                if (event.getTo() != event.getFrom()) {
+                    world.getBlockAt(location.subtract(0, 1, 0)).setType(Scaffold.curMaterial());
+                }
             }
         }
     }

@@ -15,6 +15,8 @@ public class ScaffoldTabCompleter implements TabCompleter {
         parameters.add("ice");
         parameters.add("packed_ice");
         parameters.add("blue_ice");
+        parameters.add("add_player");
+        parameters.add("remove_player");
 
         return parameters;
     }

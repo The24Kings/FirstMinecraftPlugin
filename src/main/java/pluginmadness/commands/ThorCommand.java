@@ -14,7 +14,7 @@ public class ThorCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) return true;
         Player player = (Player) sender;
-        Location playerLocation = new Location(player.getWorld(), player.getLocation().getBlockX(), player.getLocation().getBlockY(), player.getLocation().getBlockZ());
+        Location playerLocation = player.getLocation();
         ItemStack inHand = player.getInventory().getItemInMainHand();
 
         if (args.length == 0 && label.equalsIgnoreCase("thor")) {
