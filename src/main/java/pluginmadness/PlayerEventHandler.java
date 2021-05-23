@@ -9,12 +9,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockDamageEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
 
 public class PlayerEventHandler implements Listener {
 
@@ -65,6 +69,50 @@ public class PlayerEventHandler implements Listener {
 
             if (event.getTo() != event.getFrom()) {
                 world.getBlockAt(location.subtract(0, 1, 0)).setType(Scaffold.curMaterial());
+            }
+        }
+    }
+/*
+    @EventHandler
+    public void creeperExplosion(EntitySpawnEvent event) {
+        if(event.isCancelled()) {
+            return;
+        }
+        Entity entity = event.getEntity();
+
+
+    }*/
+
+    @EventHandler
+    public void onBlockBreak(BlockDamageEvent event) {
+        if (BigFunni.isRunning()) {
+
+            int delay = 10; //# of ticks
+            Location blockLocal = event.getBlock().getLocation();
+            World world = blockLocal.getWorld();
+
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    if (event.getBlock().getType().equals(Material.DIAMOND_ORE)) {
+                        world.getBlockAt(blockLocal).setType(Material.STONE);
+                    }
+                }
+            }.runTaskLater(PluginMadness.getPlugin(), delay);
+        }
+    }
+
+    @EventHandler
+    public void onInvClick(InventoryClickEvent event) {
+        if(BigFunni.isRunning()) {
+            ItemStack item = event.getCurrentItem();
+            if(item != null) {
+                ItemStack replace = new ItemStack(Material.AIR, item.getAmount());
+                ItemStack check = new ItemStack(Material.DIAMOND, item.getAmount());
+
+                if (item.equals(check)) {
+                    event.setCurrentItem(replace);
+                }
             }
         }
     }

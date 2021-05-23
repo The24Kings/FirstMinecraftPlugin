@@ -19,12 +19,9 @@ public class ScaffoldCommand implements CommandExecutor {
         
         if (label.equalsIgnoreCase("scaffold") && args.length == 0) {
             if (Scaffold.isRunning()) {
-                player.sendMessage(ChatColor.GOLD + "Stopped Scaffold");
-                Scaffold.stop();
-            } else {
-                player.sendMessage(ChatColor.GOLD + "Started Scaffold");
-                Scaffold.start();
-            }
+                player.sendMessage(ChatColor.GOLD + "Stopped scaffold");
+            } else player.sendMessage(ChatColor.GOLD + "Started scaffold");
+            Scaffold.toggle();
             return true;
         }
         

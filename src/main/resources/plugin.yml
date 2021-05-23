@@ -1,4 +1,4 @@
-main: pluginmadness.Main
+main: pluginmadness.PluginMadness
 name: KingsPlugin
 version: 1.0
 author: 24Kings
@@ -10,3 +10,14 @@ commands:
 
   thor:
     description: You are the god of thuder!
+    permission: pluginmadness.thor
+
+  funni:
+    description: Does the big funny
+    permission: pluginmadness.funni
+
+permissions:
+  pluginmadness.funni:
+    default: op
+  pluginmadness.thor:
+    default: op

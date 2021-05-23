@@ -2,7 +2,6 @@ package pluginmadness.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,12 +19,9 @@ public class ThorCommand implements CommandExecutor {
 
         if (args.length == 0 && label.equalsIgnoreCase("thor")) {
             if (Thor.isRunning()) {
-                player.sendMessage(ChatColor.GOLD + "Stopped Thor");
-                Thor.stop();
-            } else {
-                player.sendMessage(ChatColor.GOLD + "Started Thor");
-                Thor.start();
-            }
+                player.sendMessage(ChatColor.GOLD + "Stopped thor");
+            } else player.sendMessage(ChatColor.GOLD + "Started thor");
+            Thor.toggle();
             return true;
         }
         if (label.equalsIgnoreCase("thor")) {

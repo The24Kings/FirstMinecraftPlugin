@@ -6,12 +6,8 @@ public class Scaffold {
     public static boolean running;
     public static Material mainMaterial = Material.ICE;
 
-    public static void start() {
-        running = true;
-    }
-
-    public static void stop() {
-        running = false;
+    public static void toggle() {
+        running = !running;
     }
 
     public static void setMaterial(Material material) {
