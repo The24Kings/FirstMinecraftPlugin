@@ -74,7 +74,7 @@ public class PlayerEventHandler implements Listener {
             }
         }
     }
-/*
+/*TODO Make creeper explosions double (if possible)
     @EventHandler
     public void creeperExplosion(EntitySpawnEvent event) {
         if(event.isCancelled()) {
@@ -84,7 +84,11 @@ public class PlayerEventHandler implements Listener {
 
 
     }*/
-
+/*TODO
+*
+* Change to specific player targeted for the big funny using UUIDs
+*
+* */
     @EventHandler
     public void onBlockBreak(BlockDamageEvent event) {
         if (BigFunni.isRunning()) {
