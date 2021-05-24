@@ -22,11 +22,7 @@ import org.bukkit.util.Vector;
 
 public class PlayerEventHandler implements Listener {
 
-     /* TODO
-     *
-     * add in "Deficating" command system
-     *
-     */
+     /* TODO add in "Deficating" command system */
 
     @EventHandler
     public void onSneak (PlayerToggleSneakEvent event) {
@@ -84,11 +80,7 @@ public class PlayerEventHandler implements Listener {
 
 
     }*/
-/*TODO
-*
-* Change to specific player targeted for the big funny using UUIDs
-*
-* */
+/* TODO Change to specific player targeted for the big funny using UUIDs */
     @EventHandler
     public void onBlockBreak(BlockDamageEvent event) {
         if (BigFunni.isRunning()) {
